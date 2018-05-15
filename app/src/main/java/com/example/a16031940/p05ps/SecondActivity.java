@@ -1,5 +1,6 @@
 package com.example.a16031940.p05ps;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -13,7 +14,7 @@ public class SecondActivity extends AppCompatActivity {
     ArrayAdapter aa;
     ArrayList<Song>song;
     DBHelper dbh = new DBHelper(SecondActivity.this);
-
+    Song data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +22,8 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
     lv = findViewById(R.id.lv);
-
-    song = new ArrayList<Song>();
-    
+    Intent i = getIntent();
+    data = (Song)i.getSerializableExtra("data");
 
     }
 }

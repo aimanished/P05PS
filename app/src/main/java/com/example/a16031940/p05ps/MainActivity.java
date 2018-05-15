@@ -74,10 +74,15 @@ public class MainActivity extends AppCompatActivity {
                     String tmp = al.get(i);
                     txt += tmp + "\n";
               }
+               String data = al.get(0);
+               String singer = data.split(",")[0];
+                String title = data.split(",")[1];
+                int year =Integer.parseInt( data.split(",")[2]);
+                int star =Integer.parseInt(data.split(",")[3]);
+                Song target =  new Song(title , singer,year,star);
 
-
-                Intent i = new Intent(MainActivity.this,SecondActivity.class);
-                i.putExtra("data",txt);
+         Intent i = new Intent(MainActivity.this,SecondActivity.class);
+                i.putExtra("data",target);
                 startActivity(i);
             }
         });

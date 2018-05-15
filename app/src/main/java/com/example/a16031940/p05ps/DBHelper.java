@@ -60,8 +60,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
-                String content = cursor.getString(1);
-                notes.add("ID:" + id + ", " + content);
+                String name = cursor.getString(1);
+                String year = cursor.getString(2);
+                String singer = cursor.getString(3);
+                String title = cursor.getString(4);
+                notes.add(name +","+year+","+singer+","+title);
             } while (cursor.moveToNext());
         }
         cursor.close();
